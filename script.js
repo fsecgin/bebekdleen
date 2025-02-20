@@ -8,7 +8,7 @@ const keyboard = document.getElementById("keyboard");
 let hintLetter = null; // this will hold the single hint letter for the current word
 let didUseHint = false; // Track whether user used the hint
 
-const serverStartTime = new Date(2025, 02, 20, 12, 0, 0); // 27 Dec 2024, 16:00
+const serverStartTime = new Date(2025, 01, 20, 12, 0, 0); // 27 Dec 2024, 16:00
 const FOUR_HOURS_IN_MS = 4 * 60 * 60 * 1000;
 
 function getTimeBasedWord(wordArray) {
