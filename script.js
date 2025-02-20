@@ -68,7 +68,7 @@ function createCountdownElement() {
   
     // Create the secondary text
     const nextText = document.createElement("div");
-    nextText.textContent = "Sonraki Bebekdle İçin";
+    nextText.textContent = "Next Bebekdle In";
     nextText.style.fontSize = "14px"; // Smaller and lighter
     nextText.style.fontWeight = "lighter";
   
@@ -526,7 +526,7 @@ function submitGuess() {
       resultLine,
       hintLine,
       gridString,
-      "https://fsecgin.github.io/bebekdle/"
+      "https://fsecgin.github.io/bebekdleen/"
     ].join("\n\n");
   
     // 5) Use the Web Share API if available
@@ -579,7 +579,7 @@ function submitGuess() {
     const gridString = buildEmojiGrid(rowsUsed);
   
     // 2) "Bebekdle Türkçe X/6" (X is the row used)
-    const resultLine = `Bebekdle Türkçe ${rowsUsed}/6`;
+    const resultLine = `Bebekdle ${rowsUsed}/6`;
   
     // 3) Did we use a hint?
     const hintLine = didUseHint
@@ -1051,7 +1051,7 @@ function showSnackbar(message, duration = 3000) {
     countdownElement.style.textAlign = "center";
   
     const nextText = document.createElement("div");
-    nextText.textContent = "Sonraki Bebekdle İçin";
+    nextText.textContent = "Next Bebekdle In";
     nextText.style.fontSize = "14px";
     nextText.style.fontWeight = "lighter";
     nextText.style.textAlign = "center";
