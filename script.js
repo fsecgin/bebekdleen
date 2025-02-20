@@ -843,7 +843,7 @@ function showSnackbar(message, duration = 3000) {
     hintLetter = unrevealedLetters[randomIndex]; // Store globally
   
     // 4) Show it to the user
-    alert(`MEMEDALİNİN ${hintLetter.toLocaleUpperCase("tr-TR")} Sİ 👽`);
+    alert(`HERE’S YOUR LETTER ${hintLetter.toLocaleUpperCase("tr-TR")} — DON’T SPEND IT ALL AT ONCE 👽`);
   }
 
   function hasUserGuessedLetter(letter) {
