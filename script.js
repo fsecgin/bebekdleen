@@ -8,7 +8,7 @@ const keyboard = document.getElementById("keyboard");
 let hintLetter = null; // this will hold the single hint letter for the current word
 let didUseHint = false; // Track whether user used the hint
 
-const serverStartTime = new Date(2024, 11, 27, 12, 0, 0); // 27 Dec 2024, 16:00
+const serverStartTime = new Date(2025, 02, 20, 12, 0, 0); // 27 Dec 2024, 16:00
 const FOUR_HOURS_IN_MS = 4 * 60 * 60 * 1000;
 
 function getTimeBasedWord(wordArray) {
@@ -291,7 +291,7 @@ function findKeyButton(letter) {
 function submitGuess() {
     if (currentGuess.length !== targetWord.length) {
       // 1) Snackbar göster
-      showSnackbar("5 harf aşkım... 😅");
+      showSnackbar("It’s 5 letters, love... 😅");
       
       // 2) Shake animasyonu
       const row = board.children[currentRow];
@@ -313,7 +313,7 @@ function submitGuess() {
   
     if (!wordList.includes(currentGuess)) {
         // 1) Snackbar göster
-        showSnackbar("Böyle bir kelime yok bebek 😩");
+        showSnackbar("That word doesn’t exist babe 😩");
       
         // 2) Shake animasyonu
         const row = board.children[currentRow];
@@ -478,7 +478,7 @@ function submitGuess() {
   
     // Create the main text
     const winText = document.createElement("p");
-    winText.textContent = "💖💖 BRAVO BEBEKÇİM DOĞRU CEVAP 💖💖💖";
+    winText.textContent = "💖💖💖 WELL DONE BABY, THAT’S THE RIGHT ANSWER! 💖💖💖";
     winText.style.fontSize = "1.1rem";
     winText.style.fontWeight = "600";
     winText.style.lineHeight = "1.4";
@@ -486,7 +486,7 @@ function submitGuess() {
   
     // Create SHARE button
     const shareButton = document.createElement("button");
-    shareButton.textContent = "PAYLAŞ 📤";
+    shareButton.textContent = "SHARE 📤";
     shareButton.style.backgroundColor = "pink";
     shareButton.onclick = () => {
       shareResultsNative(rowsUsed);
@@ -518,8 +518,8 @@ function submitGuess() {
   
     // 3) Did we use a hint?
     const hintLine = didUseHint
-      ? "İpucu kullandım 👺"
-      : "İpucu kullanmadım 😎";
+      ? "I used a hint 👺"
+      : "I didn't use a hint 😎";
   
     // 4) Put it all together
     const finalText = [
@@ -583,8 +583,8 @@ function submitGuess() {
   
     // 3) Did we use a hint?
     const hintLine = didUseHint
-      ? "İpucu kullandım 👺"
-      : "İpucu kullanmadım 😎";
+      ? "I used a hint 👺"
+      : "I didn’t use a hint 😎";
   
     // 4) Put all together
     const finalText = [
@@ -712,7 +712,7 @@ function showSnackbar(message, duration = 3000) {
   
     // Create the text
     const hintText = document.createElement("p");
-    hintText.textContent = "Zor mu geldi? 😼 HARF ALAYIM dersen 1 harf söylerim.";
+    hintText.textContent = "Too hard? 😼 Say GIVE ME A LETTER and I’ll reveal one!";
     hintText.style.fontSize = "1.1rem";
     hintText.style.lineHeight = "1.4";
     hintText.style.marginBottom = "24px";
@@ -725,7 +725,7 @@ function showSnackbar(message, duration = 3000) {
   
     // Create 'HARF ALAYIM' button
     const revealButton = document.createElement("button");
-    revealButton.textContent = "HARF ALAYIM";
+    revealButton.textContent = "GIVE ME A LETTER";
     revealButton.onclick = () => {
       revealRandomLetter();
       didUseHint = true; // The user definitely used a hint now
@@ -735,7 +735,7 @@ function showSnackbar(message, duration = 3000) {
   
     // Create 'KENDİM ÇÖZERİM BE' button
     const closeButton = document.createElement("button");
-    closeButton.textContent = "KENDİM ÇÖZERİM BE";
+    closeButton.textContent = "I’LL FIGURE IT OUT MYSELF";
     closeButton.onclick = () => {
       document.body.removeChild(overlay);
     };
@@ -798,11 +798,11 @@ function showSnackbar(message, duration = 3000) {
     if (hintLetter) {
       // If user already guessed that hint letter, display the "already found" message.
       if (hasUserGuessedLetter(hintLetter)) {
-        alert("AŞKIM İPUCUNU ZATEN BULMUŞSUN 🕵");
+        alert("BABE YOU’VE ALREADY FOUND THE HINT 🕵");
         return;
       } else {
         // Otherwise, show them the same hint letter again
-        alert(`MEMEDALİNİN ${hintLetter.toLocaleUpperCase("tr-TR")} Sİ 👽`);
+        alert(`HERE’S YOUR LETTER ${hintLetter.toLocaleUpperCase("tr-TR")} — DON’T SPEND IT ALL AT ONCE 👽`);
         return;
       }
     }
@@ -834,7 +834,7 @@ function showSnackbar(message, duration = 3000) {
   
     if (unrevealedLetters.length === 0) {
       // Means user has already guessed all letters in some form
-      alert("AŞKIM İPUCUNU ZATEN BULMUŞSUN 🕵");
+      alert("BABE YOU’VE ALREADY FOUND THE HINT 🕵");
       return;
     }
   
@@ -900,7 +900,7 @@ function showSnackbar(message, duration = 3000) {
   
     // Create the text
     const infoText = document.createElement("p");
-    infoText.textContent = "Daha fazla vakit geçirebilelim die, sevgiyle tasarlandı....";
+    infoText.textContent = "Designed with love... so we can spend more time together.";
     infoText.style.fontSize = "1.1rem";
     infoText.style.lineHeight = "1.4";
     infoText.style.marginBottom = "24px";
@@ -1010,7 +1010,7 @@ function showSnackbar(message, duration = 3000) {
   
     // Create main text
     const mainText = document.createElement("p");
-    mainText.textContent = "Maalesef bilemedik bulamadık....";
+    mainText.textContent = "Sadly, we couldn’t guess it...";
     mainText.style.marginBottom = "8px";
   
     // Create answer text (the actual 'cevap')
@@ -1021,7 +1021,7 @@ function showSnackbar(message, duration = 3000) {
   
     // Create final line
     const finalLine = document.createElement("p");
-    finalLine.textContent = "Cevap buymuş... Böyle bi kelime yok ki a";
+    finalLine.textContent = "So this was the answer... That’s not even a real word, wtf!";
     finalLine.style.marginBottom = "16px";
   
     loseTextContainer.appendChild(mainText);
